@@ -28,9 +28,11 @@ function priceVal(){
 
     if(value === "" || value < 5){
         priceEl.classList.add("error-border-bottom");
+        priceEl.setAttribute("aria-invalid", "true");
         errorPrice.textContent = "Please provide a minimum fee";
     }else{
         priceEl.classList.remove("error-border-bottom");
+        priceEl.setAttribute("aria-invalid", "false");
         errorPrice.textContent = "";
     }
 
@@ -41,9 +43,11 @@ function priceVal(){
 function titleVal(){
     if((titleEl.value.length < 5) || (titleEl.value.length > 50)){
         titleEl.classList.add("error-border-bottom");
+        titleEl.setAttribute("aria-invalid", "true");
         errorTitle.textContent = "Please provide a name for your quiz";
     }else{
         titleEl.classList.remove("error-border-bottom");
+        titleEl.setAttribute("aria-invalid", "false");
         errorTitle.textContent = "";
     }
 }
@@ -51,9 +55,11 @@ function titleVal(){
 function categoryVal(){
     if(categoryEl.value === ""){
         categoryEl.classList.add("error-border-bottom");
+        categoryEl.setAttribute("aria-invalid", "true");
         errorCategory.textContent = "Please select a category";
     }else{
         categoryEl.classList.remove("error-border-bottom");
+        categoryEl.setAttribute("aria-invalid", "false");
         errorCategory.textContent = "";
     }
 }
@@ -61,8 +67,10 @@ function categoryVal(){
 function fileVal(){
     if(fileEl.length < 0){
         fileWrapper.classList.add("error-border");
+        fileEl.setAttribute("aria-invalid", "true");
     }else{
         fileWrapper.classList.remove("error-border");
+        fileEl.setAttribute("aria-invalid", "false");
         fileBtn.textContent = "File choosed!";
     }
 }

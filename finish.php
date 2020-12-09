@@ -75,7 +75,7 @@
         <h2 class="center-text">Quiz created, thank you!</h2>
         <div class="container completed">
             <div class="quiz-content">
-                <img src="tmp/<?php echo $_FILES['fileUpload']['name'];?>">
+                <img src="tmp/<?php echo $_FILES['fileUpload']['name'];?>" alt="logo">
                 <!-- Quiz data details -->
                 <div class="details">
                     <p class="quiz-title"><?php echo $title; ?></p>

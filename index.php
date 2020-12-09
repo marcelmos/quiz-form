@@ -1,6 +1,8 @@
 <?php
     // Start session
     session_start();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +24,8 @@
                 <h2>Your quiz details:</h2>
                 <!-- Quiz title -->
                 <section>
-                    <p>Quiz title</p>
-                    <input <?php if(isset($_SESSION["e_title"])) echo "class='error-border-bottom'"; ?> type="text" name="title" placeholder="Enter quiz title">
+                    <label for="ltitle">Quiz title</label>
+                    <input <?php if(isset($_SESSION["e_title"])) echo "class='error-border-bottom' aria-invalid='true'"; else echo "aria-invalid='false'"; ?> type="text" id="ltitle" name="title" placeholder="Enter quiz title" >
                     <small>The title can't be longer than 50 chars.</small>
                     <!-- ERROR MESSAGE -->
                     <p class="error error-title">
@@ -35,13 +37,13 @@
 
                 <!-- Select Image -->
                 <section>
-                    <p>Quiz logo</p>
+                    <label for="lfile">Quiz logo</label>
                     <div class="upload-file-wrapper <?php if(isset($_SESSION["e_file"])) echo "error-border"; ?>">
                         <div class="position-element">
                             <div class="btn upload">Upload custom logo</div>
                         </div>
                         <div class="position-element">
-                            <input type="file" name="fileUpload" accept="image/png, image/jpeg">
+                            <input type="file" id="lfile" name="fileUpload" accept="image/png, image/jpeg" <?php if(isset($_SESSION["e_file"])) echo "aria-invalid='true'"; else echo "aria-invalid='false'"; ?>>
                         </div>
                     </div>
 
@@ -52,9 +54,9 @@
                 <h2>Select your quiz topic:</h2>
                 <!-- Quiz Category -->
                 <section>
-                    <p>Category</p>
+                    <label for="lcategory">Category</label>
                     <div class="select">
-                        <select <?php if(isset($_SESSION["e_category"])) echo "class='error-border-bottom'"; ?> name="category">
+                        <select <?php if(isset($_SESSION["e_category"])) echo "class='error-border-bottom' aria-invalid='true'"; else echo "aria-invalid='false'"; ?> id="lcategory" name="category" aria-invalid="false">
                             <option disabled selected>Choose category</option>
                             <option>General Knowledge</option>
                             <option>Movies</option>
@@ -74,8 +76,8 @@
 
                 <!-- Quiz Fee -->
                 <section>
-                    <p>Quiz entry fee</p>
-                    <input <?php if(isset($_SESSION["e_price"])) echo "class='error-border-bottom'"; ?> type="text" name="price" placeholder="£12.50" value="£12.50">
+                    <label for="lprice">Quiz entry fee</label>
+                    <input <?php if(isset($_SESSION["e_price"])) echo "class='error-border-bottom' aria-invalid='true'"; else echo "aria-invalid='false'"; ?> type="text" id="lprice" name="price" placeholder="£12.50" value="£12.50">
                     <small>Min. entry fee is £5.00</small>
 
                     <!-- ERROR MESSAGE -->
