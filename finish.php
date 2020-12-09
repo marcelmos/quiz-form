@@ -70,16 +70,16 @@
     <!-- My Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="finish">
     <div class="main-container">
-        <h2>Quiz created, thank you!</h2>
+        <h2 class="center-text">Quiz created, thank you!</h2>
         <div class="container completed">
             <div class="quiz-content">
-                <img src="tmp/<?php echo $_FILES['fileUpload']['name'];?>" alt='Quiz Logo'>
+                <img src="tmp/<?php echo $_FILES['fileUpload']['name'];?>">
                 <!-- Quiz data details -->
                 <div class="details">
-                    <h3><?php echo $title; ?></h3>
-                    Entry Fee: <h3 class="price"><?php echo $price; ?></h3>
+                    <p class="quiz-title"><?php echo $title; ?></p>
+                    <div class="quiz-price">Entry Fee: <div class="price"><?php echo $price; ?></div></div>
                 </div>
             </div>
             <!-- Quiz category -->
@@ -88,7 +88,7 @@
             </div>
         </div>
         <!-- Create new quiz button -->
-        <a href="index.php"><button class="btn proceed btn-new">Create another one!</button></a>
+        <a href="index.php" class="btn proceed btn-new">Create another one!</a>
     </div>
 </body>
 </html>

@@ -19,11 +19,11 @@
     <form enctype="multipart/form-data" action="finish.php" method="post" class="main-container">
         <div class="container">
             <div class="column">
-                <h3>Your quiz details:</h3>
+                <h2>Your quiz details:</h2>
                 <!-- Quiz title -->
-                <label>
+                <section>
                     <p>Quiz title</p>
-                    <input <?php if(isset($_SESSION["e_title"])) echo "style='border-bottom: solid 2px #FA4043;'"; ?> type="text" name="title" placeholder="Enter quiz title">
+                    <input <?php if(isset($_SESSION["e_title"])) echo "class='error-border-bottom'"; ?> type="text" name="title" placeholder="Enter quiz title">
                     <small>The title can't be longer than 50 chars.</small>
                     <!-- ERROR MESSAGE -->
                     <p class="error error-title">
@@ -31,12 +31,12 @@
                         echo $_SESSION["e_title"];
                         unset($_SESSION["e_title"]);} ?>
                     </p>
-                </label>
+                </section>
 
                 <!-- Select Image -->
-                <label>
+                <section>
                     <p>Quiz logo</p>
-                    <div <?php if(isset($_SESSION["e_file"])) echo "style='border: solid 2px #FA4043;'"; ?> class="upload-file-wrapper">
+                    <div class="upload-file-wrapper <?php if(isset($_SESSION["e_file"])) echo "error-border"; ?>">
                         <div class="position-element">
                             <div class="btn upload">Upload custom logo</div>
                         </div>
@@ -46,15 +46,15 @@
                     </div>
 
                     <p class="center-text"><small>.JPG, .PNG only</small></p>
-                </label>
+                </section>
             </div>
             <div class="column mv">
-                <h3>Select your quiz topic:</h3>
+                <h2>Select your quiz topic:</h2>
                 <!-- Quiz Category -->
-                <label>
+                <section>
                     <p>Category</p>
                     <div class="select">
-                        <select <?php if(isset($_SESSION["e_category"])) echo "style='border-bottom: solid 2px #FA4043;'"; ?> name="category">
+                        <select <?php if(isset($_SESSION["e_category"])) echo "class='error-border-bottom'"; ?> name="category">
                             <option disabled selected>Choose category</option>
                             <option>General Knowledge</option>
                             <option>Movies</option>
@@ -70,12 +70,12 @@
                         echo $_SESSION["e_category"];
                         unset($_SESSION["e_category"]);} ?>
                     </p>
-                </label>
+                </section>
 
                 <!-- Quiz Fee -->
-                <label>
+                <section>
                     <p>Quiz entry fee</p>
-                    <input <?php if(isset($_SESSION["e_price"])) echo "style='border-bottom: solid 2px #FA4043;'"; ?> type="text" name="price" placeholder="£12.50">
+                    <input <?php if(isset($_SESSION["e_price"])) echo "class='error-border-bottom'"; ?> type="text" name="price" placeholder="£12.50" value="£12.50">
                     <small>Min. entry fee is £5.00</small>
 
                     <!-- ERROR MESSAGE -->
@@ -84,13 +84,12 @@
                         echo $_SESSION["e_price"];
                         unset($_SESSION["e_price"]);} ?>
                     </p>
-                </label>
+                </section>
             </div>
         </div>
         <button type="submit" name="submit" class="btn proceed">Proceed</button>
     </form>
 
-<!-- Script link -->
     <script src="js/script.js"></script>
 
 </body>
