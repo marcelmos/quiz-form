@@ -1,0 +1,233 @@
+body{
+    background-color: #EFF2FB;
+    color: #3A3875;
+    font-family: 'Roboto', sans-serif;; /* Change to ROBOTO font */
+    padding: 50px 10%;
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+    margin: 0 ;
+}
+
+/* Input fields */
+input, select{
+    width: 99%;
+    font-size: 20px;
+    padding: 16px 2px 20px 2px;
+    background: transparent;
+    border: none;
+    border-bottom: solid 2px #CECFEE;
+    display:inline-block;
+    font-weight: bold;
+    color: #36326F;
+}
+
+/* ---REMOVE ARROWS--- */
+select{
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}
+/* Select arrow */
+.select {
+    width: 100%;
+    align-items: center;
+}
+.select::after{
+    content: "";
+    width: 15px;
+    height: 7px;
+    background-color: #F843A4;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    float: right;
+    position: relative;
+    top: -40px;
+}
+
+/* On hover and focused */
+input:hover, input:focus, select:hover, select:focus{
+    transition: border-bottom .3s;
+    border-bottom: solid 2px #7B3FF9;
+}
+
+label{
+    margin-bottom: 40px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
+    background-color: #000;
+}
+
+/* Proceed Button style */
+a{
+    text-align: center;
+}
+
+/* Buttons style */
+.btn{
+    color: #FDFEFE;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    justify-self: center;
+    text-align: center;
+}
+.proceed{
+    background-color: #FF3FA6;
+    width: 50%;
+    font-size: 17px;
+    padding: 22px 200px;
+    white-space: nowrap;
+    overflow: visible;
+}
+.upload{
+    background-color: #7B3DFA;
+    font-size: 14px;
+    padding: 10px 20px;
+    position: relative;
+}
+.btn-new{
+    margin-top: 50px;
+}
+
+/* Upload file style */
+.upload-file-wrapper{
+    height: 37px;
+    background-color: #DCE2F2;
+    border-radius: 25px;;
+    padding: 20px 150px;
+    margin: 10px 0;
+    justify-content: center;
+    display: flex;
+}
+.upload-file-wrapper  input[type=file]{
+    height: 37px;
+    width: 100%;
+    position: relative;
+    top: -20px;
+    left: 0;
+    opacity: 0;
+}
+.position-element{
+    position: absolute;
+}
+
+/* Containers */
+.container{
+    justify-content: space-around;
+    display: flex;
+}
+.container.completed{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 25px;
+    justify-content: space-between;
+    display: flex;
+}
+.quiz-content{
+    width: 70%;
+    padding: 25px;
+    justify-content: left;
+    display: flex;
+}
+.quiz-content>.details{
+    padding: 12px 24px;
+}
+.category-container{
+    width: 30%;
+    padding: 25px;
+    background-color: #FBFBFB;
+    border-left: solid 2px #F8F7FC;
+    border-radius: 0 50px 50px 0;
+    justify-content: center;
+    display: flex;
+    font-size: 18px;
+    position: relative;
+}
+.category-container > p{
+    margin: 0;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.column{
+    padding: 30px;
+    width: 50%;
+}
+
+/* Text formating */
+.center-text{
+    text-align: center;
+}
+.error{
+    color: #FA4043;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.category{
+    display: inline;
+}
+
+.quiz-content h3{
+    font-size: 24px;
+    margin: 0;
+}
+.quiz-content h3.price{
+    color: #F843A4;
+    display: inline;
+}
+
+/* Form Elements */
+.main-container{
+    display: grid;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%;
+}
+
+
+
+/* STYLE FOR SMALLER SCREEN */
+@media only screen and (max-width: 768px) {
+    /* Columns */
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .column{
+        padding: 0;
+        width: 100%;
+    }
+    .mv, .category-container{
+        order: 2;
+    }
+    .category-container{
+        width: 100%;
+        padding: 25px 0;
+        /* background-color: red; */
+        display: flex;
+        border-top: solid 2px #f8f7fc;
+        border-radius: 0 0 25px 25px;
+    }
+    .quiz-content{
+        width: 100%;
+    }
+    /* Btn */
+    .proceed{
+        width: 100%;
+        padding: 22px 100px;
+    }
+}
